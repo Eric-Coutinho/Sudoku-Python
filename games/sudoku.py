@@ -1,5 +1,17 @@
-# jogo_eleven_nine.py
 import pygame
+import numpy as np
+
+def generateGrid():
+    row = 3
+    col = 3
+    grid = []
+
+    for i in range(3):
+        for j in range(3):
+            cell = np.random.randint(1,9, size=(row, col))
+            grid.append(cell)
+
+generateGrid()
 
 def playSudoku():
     pygame.init()
@@ -7,8 +19,6 @@ def playSudoku():
     clock = pygame.time.Clock()
     running = True
     dt = 0
-
-    numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
     while running:
         for event in pygame.event.get():
